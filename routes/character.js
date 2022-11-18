@@ -5,10 +5,14 @@ const router = express.Router();
 
 router.get("/characters", async (req, res) => {
   console.log("/characters....");
+  const limit = req.query.limit || 100;
+  const skip = req.query.skip || 0;
+  const name = req.query.name || "";
 
+  console.log("params -> ", limit, skip, name);
   try {
     const response = await axios(
-      `${process.env.URL_BASE}/characters?apiKey=${process.env.API_KEY}`
+      `${process.env.URL_BASE}/characters?apiKey=${process.env.API_KEY}&limit=${limit}&skip=${skip}&name=${name}`
     );
     res.status(200).json(response.data);
   } catch (error) {
