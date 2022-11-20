@@ -7,15 +7,14 @@ router.get("/comics", async (req, res) => {
   console.log("/comics");
   const limit = req.query.limit || 100;
   const skip = req.query.skip || 0;
-  const name = req.query.name || "";
-  console.log("params -> ", limit, skip, name);
+  const title = req.query.title || "";
+  console.log("params -> ", limit, skip, title);
 
   try {
     const response = await axios.get(
-      `${process.env.URL_BASE}/comics?apiKey=${process.env.API_KEY}&limit=${limit}&skip=${skip}&name=${name}`
+      `${process.env.URL_BASE}/comics?apiKey=${process.env.API_KEY}&limit=${limit}&skip=${skip}&name=${title}`
     );
     //console.log("Réponse ->", response.data);
-    //res.status(200).json({ message: "OK" });
     res.status(200).json(response.data);
   } catch (error) {
     res.status(400).json({ message: error.message });
