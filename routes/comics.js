@@ -12,7 +12,7 @@ router.get("/comics", async (req, res) => {
 
   try {
     const response = await axios.get(
-      `${process.env.URL_BASE}/comics?apiKey=${process.env.API_KEY}&limit=${limit}&skip=${skip}&name=${title}`
+      `${process.env.URL_BASE}/comics?apiKey=${process.env.API_KEY}&limit=${limit}&skip=${skip}&title=${title}`
     );
     //console.log("Réponse ->", response.data);
     res.status(200).json(response.data);
