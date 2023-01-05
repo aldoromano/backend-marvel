@@ -1,6 +1,6 @@
-# Réplique simplifiée du site Marvel - partie back (formation REACTEUR)
+# Réplique partielle du site Marvel - partie back (formation REACTEUR)
 
-Back très simple avec une route pour les personnages (liste et détail d'un personnage) et une autre pour les comics (liste et détail).
+Back très simple avec 2 routeq pour les personnages (liste et détail d'un personnage) et une autre pour les comics (liste).
 
 Gestion de la pagination.
 
